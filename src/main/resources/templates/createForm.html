@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thêm Vật Tư</title>
+</head>
+<body>
+<h1>Thêm Vật Tư</h1>
+<form th:action="@{/create}" th:object="${dmVatTu}" method="post">
+    <label for="MaKkS">Mã KKS:</label>
+    <input type="text" id="MaKkS" th:field="*{MaKkS}"/><br><br>
+
+    <label for="TenVT">Tên VT:</label>
+    <input type="text" id="TenVT" th:field="*{TenVT}"/>
+    <span th:if="${#fields.hasErrors('TenVT')}" th:errors="*{TenVT}"></span><br><br>
+
+    <label for="DVTinh">Đơn vị tính:</label>
+    <input type="text" id="DVTinh" th:field="*{DVTinh}"/>
+    <span th:if="${#fields.hasErrors('DVTinh')}" th:errors="*{DVTinh}"></span><br><br>
+
+    <label for="MaNuoc">Mã nước:</label>
+    <input type="text" id="MaNuoc" th:field="*{MaNuoc}"/>
+    <span th:if="${#fields.hasErrors('MaNuoc')}" th:errors="*{MaNuoc}"></span><br><br>
+
+    <label for="MaNCC">Mã NCC:</label>
+    <input type="text" id="MaNCC" th:field="*{MaNCC}"/>
+    <span th:if="${#fields.hasErrors('MaNCC')}" th:errors="*{MaNCC}"></span><br><br>
+
+    <button type="submit">Lưu</button>
+</form>
+</body>
+</html>
